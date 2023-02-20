@@ -7,8 +7,7 @@
 # <result>
 .section .bss
 .lcomm buffer, 4000000
-.section .data
-Output: .byte 2000000
+.lcomm Output, 2000000
 
 .section .text
 .global _start
@@ -160,8 +159,10 @@ _start:
 
 	leaq 	Output(%rip), %rax
 
-	add 	$2000000, %rax
+	add 	$1000, %rax
 	push 	%rax
+	movb 	$0x00, (%rax)
+	dec 	%rax
 	movb 	$0x0a, (%rax)
 	dec 	%rax
 
