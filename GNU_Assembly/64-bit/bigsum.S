@@ -1,3 +1,10 @@
+# compile: gcc -m64 -Wall -e_start -nostdlib -o bigsum bigsum.S
+# run: ./bigsum
+# input format:
+# [...]arg1 [...]arg2[...]<enter>
+
+# output:
+# <result>
 .section .bss
 .lcomm buffer, 4000000
 .section .data
